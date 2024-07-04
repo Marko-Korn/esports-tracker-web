@@ -13,6 +13,7 @@ This is a Flask-based web application that tracks upcoming and past esports tour
 - Python
 - Flask
 - HTML
+- CSS
 - Bootstrap
 - PandaScore API
 
