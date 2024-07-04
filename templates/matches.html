@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">{% if past %}Past{% else %}Upcoming{% endif %} Matches</h1>
+
+<div class="mb-3">
+  <a href="{{ url_for(request.endpoint, sort_by='date', past=past) }}" class="btn btn-primary">Sort by Date</a>
+  <a href="{{ url_for(request.endpoint, sort_by='game', past=past) }}" class="btn btn-primary">Sort by Game</a>
+</div>
+
+<div class="row">
+  {% for match in matches %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ match.name }}</h5>
+          <p class="card-text">
+            Start Date: {{ match.formatted_begin_at }}<br>
+            Game: {{ match.videogame.name }}<br>
+            {% if past %}
+              Winner: {{ match.winner }}<br>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

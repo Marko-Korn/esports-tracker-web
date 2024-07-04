@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Tournaments for {{ game }}</h1>
+
+<div class="row">
+  {% for tournament in tournaments %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ tournament.name }}</h5>
+          <p class="card-text">
+            Start Date: {{ tournament.formatted_begin_at }}(GMT+3)<br>
+            End Date: {{ tournament.formatted_end_at }}(GMT+3)<br>
+            Game: {{ tournament.videogame.name }}
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

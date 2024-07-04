@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Upcoming Esport Tournaments</h1>
+<div class="row mb-4">
+  <div class="col-md-12">
+    <a href="{{ url_for('upcoming_matches') }}" class="btn btn-primary">Show Upcoming Matches</a>
+    <a href="{{ url_for('past_matches') }}" class="btn btn-secondary">Show Past Matches</a>
+  </div>
+</div>
+
+<!-- Display game images as buttons -->
+<div class="row mb-4">
+  {% for game in games %}
+  <div class="banner shrink">
+    <a href="{{ url_for('tournaments_by_game', game=game) }}">
+      <img src="{{ url_for('static', filename='images/' ~ game_images[game]) }}" class="img-fluid" alt="{{ game }}">
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+{% endblock %}

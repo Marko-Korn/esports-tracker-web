@@ -1,0 +1,44 @@
+html {
+color: white;
+font-family: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: #1a1a1a;
+  font-family: "JetBrains Mono", monospace;
+}
+
+h1 {
+text-align: center;
+color: white;
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
+
+.banner {
+padding: 5px;
+}
+
+.cd {
+width: 33%;
+}
+
+.button {
+    margin:0 auto;
+    display:block;
+}
+
+/* HOVER */
+.shrink img {
+transition: 1s ease;
+}
+
+.shrink img:hover{
+-webkit-transform: scale(0.8);
+-ms-transform: scale(0.8);
+transform: scale(0.8);
+transition: 1s ease;
+}
